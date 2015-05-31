@@ -1,0 +1,254 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+%
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\usepackage{ragged2e}
+\robustify\cftdotfill
+
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+
+\newcommand{\lrsubheading}[2]{
+\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		#1 & #2
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Huge Honghua Li} & \textbf{\today} \\
+~&~\\
+Ph.D. in Computer Graphics  & howard.hhli@gmail.com \\
+GrUVi Lab, Simon Fraser University & http://honghuali.github.io \\
+\end{tabular*}
+\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Research Interests}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+    \item Shape Compaction: Collapsing principle analysis, Stackabilization, Foldabilization
+    \item Geometry Processing: Shape optimization, Segmentation, Topology blending
+    \item Style Analysis: Style-content separation, Style transfer
+    \item 3D Content Creation
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+	\ressubheading{Simon Fraser University}{Burnaby, Canada}
+                    {Ph.D. Computing Science}{2010 - 2015}
+	\begin{itemize}
+        \resitem{China Scholarship Council Four-Year Ph.D. Scholarship}
+		\resitem{Dissertation: Shape Compaction via Stacking and Folding}
+        \resitem{Advisor: Prof. Hao (Richard) Zhang}
+        \resitem{Committee: Prof. Daniel Cohen-Or, Prof. Ze-Nian Li, Prof. Karan Singh, Prof. Ping Tan, Prof. Mark Drew}
+        \resitem{GPA: 4.0/4.3}
+	\end{itemize}
+\item
+	\ressubheading{National University of Defence Technology}{Changsha, China}
+                    {Master Program Computing Science, B.Sc. Computing Science}{2004 - 2010}
+	\begin{itemize}
+		\resitem{Promoted to Ph.D. program w/o M.Eng degree (an honor for top 8\% students)}
+		\resitem{B.Sc. Thesis: 3D Point Clouds Editing Based on Parameterization}
+        \resitem{Advisor: Prof. Shiyao Jin}
+        \resitem{GPA: 3.78/4.0}
+	\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Work Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+	\ressubheading{Simon Fraser University}{Burnaby, Canada}
+                    {Research Assistant (Supported by iWonder Inc.)}{Sep. 2012 - Dec. 2012}
+	\begin{itemize}
+        \resitem {Topics: iOS app development, 3D interaction for shape assembly}
+        \resitem {Faculty: Hao(Richard) Zhang}
+	\end{itemize}
+
+\item
+	\ressubheading{Simon Fraser University}{Burnaby, Canada}
+                    {Teaching Assistant}{Sep. 2010 - Aug. 2014}
+	\begin{itemize}
+		\resitem{Courses: Data Structure, Intro. to Computer Architecture, Intro. to Computer Graphics}
+        \resitem{Faculty: David G. Mitchell, Tony Dixon, Hao Zhang, Ping Tan}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Publications}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\justify
+\begin{enumerate}
+
+    \item {\bf Honghua Li} and Hao Zhang, ``Shape Compaction",
+    in \emph{Perspectives in Shape Analysis}, Dagstuhl Seminar,
+    editors: M. Breu, A. Bruckstein, P. Maragos, and S. Wuhrer, to appear.
+
+    \item {\bf Honghua Li}*, Ruizhen Hu*, Ibraheem Alhashim, and Hao Zhang (*joint first authors), ``Foldabilizing Furniture"
+    \emph{ACM Transactions on Graphics} (SIGGRAPH 2015), 34(6).
+
+    \item Ruizhen Hu, {\bf Honghua Li}, Hao Zhang and Daniel Cohen-Or, ``Approximate Pyramidal Shape
+    Decomposition", \emph{ACM Transactions on Graphics} (SIGGRAPH Asia 2014), 33(6).
+
+    \item Ibraheem Alhashim, {\bf Honghua Li}, Kai Xu, Junjie Cao, Rui Ma, Hao Zhang, ``Topology-Varying
+    3D Shape Creation via Structural Blending", \emph{ACM Transactions on Graphics} (SIGGRAPH 2014),
+    33(4).
+
+    \item {\bf Honghua Li}, Hao Zhang, Yanzhen Wang, Junjie Cao, Ariel Shamir and Daniel Cohen-Or, ``Curve
+    Style Analysis in a Set of Shapes", \emph{Computer Graphics Forum} (presented on Eurographics 2014),
+    32(6), 77-88, 2013.
+
+    \item {\bf Honghua Li}, Ibraheem Alhashim, Hao Zhang, Ariel Shamir and Daniel Cohen-Or,
+    ``Stackabilization", \emph{ACM Transactions on Graphics} (SIGGRAPH Aisa 2012), 31(6).
+
+    \item Kai Xu, {\bf Honghua Li}, Hao Zhang, Daniel Cohen-Or, Yueshan Xiong, and Zhi-Quan Cheng,
+    ``Style-Content Separation by Anisotropic Part Scales", \emph{ACM Transactions on Graphics}
+    (SIGGRAPH Aisa 2010), 29(5).
+    
+    \item Hao Fang, Zhi-Quan Cheng, {\bf Hong-Hua Li}, Jun Li, Yin chen and Gang Dang,
+    ``2D Shape Deformation and Registration Using Structural Graph Nodes", 
+    the 23rd International Conference on Computer Animation and Social Agents (CASA 2010), short paper.
+
+    \item Z.-Q. Cheng, W. Jiang, G. Dang, R. Martin, J. Li, {\bf H. Li}, Y. Chen, Y. Wang, B. Li, K. Xu, S. Jin.
+    ``Non-rigid Registration in 3D Implicit Vector Space", in \emph{Proc. of Shape Modeling International},
+    Aix-en-Provence, France, 2010.
+
+    \item Jun Li, Zhiquan Cheng, {\bf Honghua Li}, Shiyao Jin,    ``An algorithm of Laplacian-based 3D surface
+    registration," \emph{Journal of System Simulation}, Vol. 21 Suppl. 1, pp. 113-117, 2009. (In Chinese)
+
+    \item {\bf Honghua Li}, Zhiquan Cheng, Jun Li, Shiyao Jin, ``Mesh Dense Correspondence Computation
+    based on Harmonic Field", \emph{Journal of System Simulation}, Vol. 21 Suppl. 1, pp. 6-9, 2009. (In
+    Chinese)
+
+    \item {\bf Honghua Li}, Zhiquan Cheng, Jun Li, Shiyao Jin, ¡°3D Surface Correspondence based on SIFT
+    Features of Depth Image,¡± \emph{Journal of System Simulation}, Vol. 21 Suppl. 1, pp. 15-19, 2009. (In
+    Chinese)
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Academic Presentations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item \ressubheading{Eurographics 2014}{Strasbourg, France}
+                    {Curve style analysis in a set of shapes}{Apr. 2014}
+
+\item \ressubheading{Siggraph Asia 2012}{Singapore}
+                    {Stackabilization}{Dec. 2012}
+\end{itemize}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Technique Skills }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+    \item {\bf Proficient} (used on daily basis for large projects): C++, Qt, OpenGL, 3ds Max, Key Shot, {\LaTeX}
+    \item {\bf Competent} (moderate-sized projects): C, Objective C, PHP, HTML, Matlab
+    \item {\bf Familiar} (small programs): Python, Java, Maya
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Awards \& Honors}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+    \item \lrsubheading {SFU President¡¯s PhD Scholarship} {Aug. 2014}
+    \item \lrsubheading {Travel and Minor Research Award, SFU } {Mar. 2014}
+    \item \lrsubheading {Runner-up of FAS Faculty Heat of 3MT Competition, SFU } {Feb. 2014}
+    \item \lrsubheading {SFU Graduate Fellowship } {Jan. 2013}
+    \item \lrsubheading {Travel and Minor Research Award, SFU } {Dec. 2012}
+    \item \lrsubheading {SFU Graduate Fellowship } {Sep. 2012}
+    \item \lrsubheading {SFU Graduate Fellowship } {Sep. 2011}
+    \item \lrsubheading {China Scholar Council 4-year Ph.D. Scholarship} {Sep. 2010}
+    \item \lrsubheading {Bronze Medal of Graduate English Debating Competition at NUDT } {2009}
+    \item \lrsubheading {NUDT Fund of Innovation (< 3\%) } {2009}
+    \item \lrsubheading {Bronze Medal of Undergraduate Contest in Computer Works, Hunan } {2008}
+    \item \lrsubheading {Galaxy First-Class Scholarship (< 2\%), CS, NUDT } {2008}
+    \item \lrsubheading {Galaxy Second-Class Scholarship (< 2\%), CS, NUDT } {2007}
+    \item \lrsubheading {Second Prize of Mathematic Contest in Modeling, Hunan Zone } {2006}
+    \item \lrsubheading {Outstanding Student, CS, NUDT } {2005-2009}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{References}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item \ressubheading{Hao (Richard) Zhang} {Burnaby, Canada}
+                    {Simon Fraser Univesity}{haoz@cs.sfu.ca}
+
+\item \ressubheading{Daniel Cohen-Or}{Tel Aviv, Israel}
+                    {Tel Aviv University}{dcor@tau.ac.il}
+                    
+\item \ressubheading{Ariel Shamir}{Herzliya, Israel}
+                    {Interdisciplinary Center}{arik@idc.ac.il}
+                    
+\item \ressubheading{Karan Singh}{Toronto, Canada}
+                    {University of Toronto}{karan@dgp.toronto.edu}                    
+
+\item \ressubheading{Ping Tan}{Burnaby, Canada}
+                    {Simon Fraser Univesity}{pingtan@sfu.ca}
+\end{itemize}
+
+
+\end{document}
